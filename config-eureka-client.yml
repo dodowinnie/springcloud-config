@@ -1,0 +1,39 @@
+spring:
+  profiles:
+    active: dev
+---
+server:
+  port: 7001
+
+spring:
+ profiles: dev
+ application:
+   name: config-eureka-client
+eureka:
+  instance:
+    hostname: localhost:7001
+  client:
+    register-with-eureka: false # 自己不注册进服务中心
+    fetch-register: false # 不通过eureka获取注册信息
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka
+
+---
+spring:
+  profiles:
+    active: test
+---
+server:
+  port: 7001
+spring:
+ profiles: test
+ application:
+   name: config-eureka-client
+eureka:
+  instance:
+    hostname: localhost:7001
+  client:
+    register-with-eureka: false # 自己不注册进服务中心
+    fetch-register: false # 不通过eureka获取注册信息
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka
