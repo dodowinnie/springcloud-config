@@ -6,9 +6,9 @@ server:
   port: 7001
 
 spring:
- profiles: dev
- application:
-   name: config-eureka-client
+  profiles: dev
+  application:
+    name: config-eureka-client
 eureka:
   instance:
     hostname: localhost:7001
@@ -23,9 +23,9 @@ eureka:
 server:
   port: 7001
 spring:
- profiles: test
- application:
-   name: config-eureka-client
+  profiles: test
+  application:
+    name: config-eureka-client
 eureka:
   instance:
     hostname: localhost:7001
